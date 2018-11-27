@@ -11,11 +11,16 @@ setcookie('pass', $_POST['password']);
         <title>Exo5</title>
     </head>
     <body>
-        <!-- CSS pour faire joli -->
         <div class="background">
             <h1 class="text">PHP partie 8 - Exo 5 :</h1>
         </div>
         <?php
+        //Déclaration des variables avec les valeurs du formulaire de modification
+        $loginMod=$_POST['loginmod'];
+        $passwordMod=$_POST['passwordmod'];
+        //Modification des valeurs des cookies suite aux infos rentrées dans le formulaire de modif'
+        setcookie('id', $loginMod);
+        setcookie('pass', $passwordMod);
         //Redirection automatique sur user.php
         header("location: user.php");
         exit;
